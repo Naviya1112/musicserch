@@ -53,7 +53,7 @@ if st.button('ค้นหา'):
 import requests
 
 try:
-    response = requests.get(https://naviya1112-musicserch-music-2bk9b9.streamlit.app/)
+    response = requests.get('https://naviya1112-musicserch-music-2bk9b9.streamlit.app/')
     response.raise_for_status()
 except requests.exceptions.HTTPError as err:
     st.write(f"HTTP error occurred: {err}")

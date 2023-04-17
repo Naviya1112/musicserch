@@ -36,6 +36,8 @@ def search_genius(title, artist):
 #แสดงผลการค้นหา
 if st.button('ค้นหา'):
     try:
+    # โค้ดของคุณที่นี
+
         # ค้นหาเพลงจาก Spotify
         track = search_spotify(query)
         if track:
@@ -54,5 +56,3 @@ if st.button('ค้นหา'):
         st.warning(f"The request timed out: {e}")
     except requests.exceptions.RequestException as e:
         st.warning(f"An error occurred: {e}")
-
- 

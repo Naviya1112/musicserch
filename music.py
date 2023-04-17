@@ -41,11 +41,11 @@ if st.button('ค้นหา'):
     if track:
         st.write(f"**{track['name']}** by {track['artists'][0]['name']} from the album {track['album']['name']}")
         # แสดงเนื้อเพลงจาก Genius
-        song = search_genius(track['name'], track['artists'][0]['name'])
+        #song = search_genius(track['name'], track['artists'][0]['name'])
         
-        if song:
-            st.write(song.lyrics)
-        else:
-            st.write('ไม่พบเนื้อเพลงที่ต้องการค้นหา')
-    else:
-        st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')
+        #if song:
+            #st.write(song.lyrics)
+       # else:
+            #st.write('ไม่พบเนื้อเพลงที่ต้องการค้นหา')
+    #else:
+        #st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')

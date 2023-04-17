@@ -1,0 +1,7 @@
+scikit-learn==1.2.2
+streamlit==1.21.0
+pandas==1.5.3
+sklearn==0.0post1
+plotly==5.14.1
+spotipy==2.23.0
+lyricsgenius==3.0.1

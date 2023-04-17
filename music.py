@@ -33,8 +33,7 @@ def search_spotify(query):
 def search_genius(title, artist):
     song = genius.search_song(title, artist)
     return song
-
-# แสดงผลการค้นหา
+#แสดงผลการค้นหา
 if st.button('ค้นหา'):
     try:
         # ค้นหาเพลงจาก Spotify
@@ -55,7 +54,5 @@ if st.button('ค้นหา'):
         st.warning(f"The request timed out: {e}")
     except requests.exceptions.RequestException as e:
         st.warning(f"An error occurred: {e}")
-    else:
-        st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')
 
  

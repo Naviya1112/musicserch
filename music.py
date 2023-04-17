@@ -41,7 +41,7 @@ if st.button('ค้นหา'):
     if track:
         st.write(f"**{track['name']}** by {track['artists'][0]['name']} from the album {track['album']['name']}")
         # แสดงเนื้อเพลงจาก Genius
-        song = search_genius(track['name'], track['artists'][0]['name'])
+        song = genius.search_song(song_name, artist_name)
         
         if song:
             st.write(song.lyrics)
@@ -49,15 +49,3 @@ if st.button('ค้นหา'):
             st.write('ไม่พบเนื้อเพลงที่ต้องการค้นหา')
     else:
         st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')
-
-import requests
-
-try:
-    response = requests.get('https://naviya1112-musicserch-music-2bk9b9.streamlit.app/')
-    response.raise_for_status()
-except requests.exceptions.HTTPError as err:
-    print(f"HTTP error occurred: {err}")
-except requests.exceptions.Timeout as err:
-    print(f"Timeout error occurred: {err}")
-except requests.exceptions.RequestException as err:
-    print(f"An unexpected error occurred: {err}")

@@ -10,7 +10,7 @@ credentials = oauth2.SpotifyClientCredentials(client_id=sp_client_id, client_sec
 sp = spotipy.Spotify(client_credentials_manager=credentials)
 
 # กำหนด Genius API key
-genius = lyricsgenius.Genius('lONFNa2G1kZbK4O43CfBhlBHWEC7dWM0dmLSJfon02kJwqUrrVOPqX6Yhvzo93iW')
+genius = lyricsgenius.Genius('2ZlWUsPWJkWN7MDMzUMUY-6VwyzS-GZPVp5Us6ksF7JvayZpkkcrtrwJ5FaeztM6')
 
 # สร้าง streamlit app
 st.title('ค้นหาชื่อเพลง')

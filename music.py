@@ -56,8 +56,8 @@ try:
     response = requests.get('https://naviya1112-musicserch-music-2bk9b9.streamlit.app/')
     response.raise_for_status()
 except requests.exceptions.HTTPError as err:
-    st.write(f"HTTP error occurred: {err}")
+    print(f"HTTP error occurred: {err}")
 except requests.exceptions.Timeout as err:
-    st.write(f"Timeout error occurred: {err}")
+    print(f"Timeout error occurred: {err}")
 except requests.exceptions.RequestException as err:
-    st.write(f"An unexpected error occurred: {err}")
+    print(f"An unexpected error occurred: {err}")

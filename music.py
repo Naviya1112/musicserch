@@ -2,6 +2,7 @@ import streamlit as st
 import spotipy
 import spotipy.oauth2 as oauth2
 import lyricsgenius
+import requests
 
 # กำหนด Spotify API credentials
 sp_client_id = 'd88327528b8043fd8efb87df125fbdd6'
@@ -19,7 +20,6 @@ st.write('พิมพ์เนื่อเพลงที่ต้องกา�
 # รับ input จากผู้ใช้
 query = st.text_input('ใส่ชื่อเพลงหรือเนื้อร้องบางส่วน')
 
-
 # ค้นหาเพลงจาก Spotify ด้วยเนื้อร้องบางส่วน
 def search_spotify(query):
     results = sp.search(q=query, type='track', limit=1)
@@ -33,11 +33,10 @@ def search_spotify(query):
 def search_genius(title, artist):
     song = genius.search_song(title, artist)
     return song
-#แสดงผลการค้นหา
+
+# แสดงผลการค้นหา
 if st.button('ค้นหา'):
     try:
-    # โค้ดของคุณที่นี
-
         # ค้นหาเพลงจาก Spotify
         track = search_spotify(query)
         if track:
@@ -55,4 +54,4 @@ if st.button('ค้นหา'):
     except requests.exceptions.Timeout as e:
         st.warning(f"The request timed out: {e}")
     except requests.exceptions.RequestException as e:
-        st.warning(f"An error occurred: {e}")
+        st.warning

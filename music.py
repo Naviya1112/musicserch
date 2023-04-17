@@ -36,18 +36,19 @@ def search_genius(title, artist):
 
 # แสดงผลการค้นหา
 if st.button('ค้นหา'):
-    #ค้นหาเพลงจาก Spotify
-    track = search_spotify(query)
-    if track:
-        st.write(f"**{track['name']}** by {track['artists'][0]['name']} from the album {track['album']['name']}")
-        # แสดงเนื้อเพลงจาก Genius
-        song = search_genius(track['name'], track['artists'][0]['name'])
+    try:
+        #ค้นหาเพลงจาก Spotify
+        track = search_spotify(query)
+        if track:
+            st.write(f"**{track['name']}** by {track['artists'][0]['name']} from the album {track['album']['name']}")
+            # แสดงเนื้อเพลงจาก Genius
+            song = search_genius(track['name'], track['artists'][0]['name'])
         
-        if song:
-            st.write(song.lyrics)
+            if song:
+                st.write(song.lyrics)
+            else:
+                st.write('ไม่พบเนื้อเพลงที่ต้องการค้นหา')
         else:
-            st.write('ไม่พบเนื้อเพลงที่ต้องการค้นหา')
-    else:
-        st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')
+            st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')
 
  

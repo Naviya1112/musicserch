@@ -49,3 +49,15 @@ if st.button('ค้นหา'):
             st.write('ไม่พบเนื้อเพลงที่ต้องการค้นหา')
     else:
         st.write('ไม่พบชื่อเพลงที่ต้องการค้นหา')
+
+import requests
+
+try:
+    response = requests.get(url)
+    response.raise_for_status()
+except requests.exceptions.HTTPError as err:
+    st.write(f"HTTP error occurred: {err}")
+except requests.exceptions.Timeout as err:
+    st.write(f"Timeout error occurred: {err}")
+except requests.exceptions.RequestException as err:
+    st.write(f"An unexpected error occurred: {err}")
